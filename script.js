@@ -11,8 +11,8 @@ class Explosion {
     this.spriteHeight = 179;
     this.width = this.spriteWidth * 0.5;
     this.height = this.spriteHeight * 0.5;
-    this.x = x - this.width * 0.5;
-    this.y = y - this.height * 0.5;
+    this.x = x;
+    this.y = y;
     this.image = new Image();
     this.image.src = 'https://stackblitz.com/files/web-platform-vzkvag/github/RareFonder/Audio-Visual-Effects/main/boom.png';
     this.frame = 0;
@@ -27,12 +27,12 @@ class Explosion {
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.rotate(this.angle);
-    ctx.drawImage(this.image, this.spriteWidth * this.frame, 0, this.spriteWidth, this.spriteHeight, 0, 0, this.width, this.height);
+    ctx.drawImage(this.image, this.spriteWidth * this.frame, 0, this.spriteWidth, this.spriteHeight, 0 - this.width * 0.5, 0 - this.height * 0.5, this.width, this.height);
     ctx.restore();
   }
 };
 
-window.addEventListener('mousemove', (e) => {
+window.addEventListener('click', (e) => {
   createAnimation(e);
 });
 
