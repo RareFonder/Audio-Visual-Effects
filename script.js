@@ -28,7 +28,7 @@ class Explosion {
     ctx.translate(this.x, this.y);
     ctx.rotate(this.angle);
     ctx.drawImage(this.image, this.spriteWidth * this.frame, 0, this.spriteWidth, this.spriteHeight, 0, 0, this.width, this.height);
-    ctx.restore();x
+    ctx.restore();
   }
 };
 
