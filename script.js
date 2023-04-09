@@ -18,8 +18,11 @@ class Explosion {
     this.frame = 0;
     this.timer = 0;
     this.angle = Math.random() * 6.2;
+    this.sound = new Audio();
+    this.sound.src = 'https://stackblitz.com/files/web-platform-vzkvag/github/RareFonder/Audio-Visual-Effects/main/Ice attack 2.wav';
   }
   update() {
+    if (this.frame === 0) this.sound.play();
     this.timer++;
     if (this.timer % 4 === 0) this.frame++;
   }
